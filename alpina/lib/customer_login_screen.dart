@@ -22,7 +22,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isLoading = true);
     
-    const url = 'https://your-service-name.onrender.com/api/auth/customer/send-otp';
+    const url = 'https://alpina.titaniahub.net/api/auth/customer/send-otp';
 
     try {
       final response = await http.post(
