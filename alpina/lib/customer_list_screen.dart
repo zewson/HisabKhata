@@ -29,7 +29,7 @@ class _CustomerListScreenState extends State<CustomerListScreen> {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
     // IMPORTANT: Replace with your live server URL
-    const url = 'https://your-service-name.onrender.com/api/customers';
+    const url = 'https://alpina.titaniahub.net/api/customers';
 
     try {
       final response = await http.get(
