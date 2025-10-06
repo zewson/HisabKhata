@@ -81,7 +81,7 @@ class _CustomerDetailScreenState extends State<CustomerDetailScreen> {
   Future<Map<String, String>?> _addTransaction(double amount, String type) async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
-    final url = 'https://your-service-name.onrender.com/api/customers/${_currentCustomer['_id']}/transactions';
+    final url = 'https://alpina.titaniahub.net/api/customers/${_currentCustomer['_id']}/transactions';
 
     final apiCall = http.post(
       Uri.parse(url),
