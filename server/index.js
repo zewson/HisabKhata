@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config(); // Loads environment variables from a .env file
 
-// Import route handlers
+// Import route handlers from their respective files
 const authRoutes = require('./routes/auth');
 const customerAuthRoutes = require('./routes/customerAuth');
 const customerRoutes = require('./routes/customers');
@@ -13,12 +13,14 @@ const dashboardRoutes = require('./routes/dashboard');
 // Initialize the Express app
 const app = express();
 
-// Set the port for local development and deployment
+// Set the port, using the environment variable for deployment or 3000 for local development
 const port = process.env.PORT || 3000;
 
 // --- Middleware ---
-app.use(cors()); // Enable Cross-Origin Resource Sharing
-app.use(express.json()); // Enable the server to parse incoming JSON
+// Enable Cross-Origin Resource Sharing to allow the Flutter app to communicate with the server
+app.use(cors());
+// Enable the server to parse incoming JSON data from request bodies
+app.use(express.json());
 
 // --- Database Connection ---
 mongoose.connect(process.env.MONGO_URI)
@@ -26,17 +28,18 @@ mongoose.connect(process.env.MONGO_URI)
   .catch((err) => console.error('Database connection error:', err));
 
 // --- API Routes ---
-app.use('/api/auth', authRoutes);
-app.use('/api/auth/customer', customerAuthRoutes);
-app.use('/api/customers', customerRoutes);
-app.use('/api/dashboard', dashboardRoutes);
+// Delegate specific API endpoints to their respective route handlers
+app.use('/api/auth', authRoutes); // Handles admin login/registration
+app.use('/api/auth/customer', customerAuthRoutes); // Handles customer OTP login
+app.use('/api/customers', customerRoutes); // Handles all customer & transaction logic
+app.use('/api/dashboard', dashboardRoutes); // Handles dashboard summary data
 
-// Base route to check if the server is running
+// A simple base route to confirm the server is running when you visit the URL
 app.get('/', (req, res) => {
   res.send('Hishab Khata App Server is running successfully.');
 });
 
-// Start the server
+// Start the server and listen for incoming requests on the specified port
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

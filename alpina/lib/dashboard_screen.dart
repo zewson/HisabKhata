@@ -23,7 +23,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Future<void> _fetchSummary() async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
-    const url = 'https://your-service-name.onrender.com/api/dashboard/summary';
+    const url = 'https://hisabkhata.onrender.com/api/dashboard/summary';
 
     try {
       final response = await http.get(

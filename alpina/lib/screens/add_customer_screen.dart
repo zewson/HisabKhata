@@ -21,7 +21,7 @@ class _AddCustomerScreenState extends State<AddCustomerScreen> {
 
     setState(() => _isLoading = true);
 
-    const url = 'https://your-service-name.onrender.com/api/customers';
+    const url = 'https://hisabkhata.onrender.com/api/customers';
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
 

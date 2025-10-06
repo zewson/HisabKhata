@@ -21,7 +21,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isLoading = true);
 
-    const url = 'https://your-service-name.onrender.com/api/auth/register';
+    const url = 'https://hisabkhata.onrender.com/api/auth/register';
 
     try {
       final response = await http.post(
