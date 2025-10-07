@@ -58,7 +58,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isLoading = true);
 
-    const url = 'https://alpina.titaniahub.net/api/auth/customer/verify-otp';
+    const url = 'hisabkhata.railway.internal/auth/customer/verify-otp';
 
     try {
       final response = await http.post(
