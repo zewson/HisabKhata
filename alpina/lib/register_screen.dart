@@ -21,7 +21,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isLoading = true);
 
-    const url = 'https://alpina.titaniahub.net/api/auth/register';
+    const url = 'hisabkhata.railway.internal/api/auth/register';
 
     try {
       final response = await http.post(
