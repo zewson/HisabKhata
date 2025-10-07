@@ -24,7 +24,7 @@ class _MyTransactionsScreenState extends State<MyTransactionsScreen> {
   Future<void> _fetchMyDetails() async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('customerAuthToken');
-    const url = 'https://alpina.titaniahub.net/api/auth/customer/me';
+    const url = 'hisabkhata.railway.internal/api/auth/customer/me';
 
     try {
       final response = await http.get(
