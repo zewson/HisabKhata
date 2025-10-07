@@ -21,7 +21,7 @@ class _AddCustomerScreenState extends State<AddCustomerScreen> {
 
     setState(() => _isLoading = true);
 
-    const url = 'https://alpina.titaniahub.net/api/customers';
+    const url = 'hisabkhata.railway.internal/api/customers';
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
 
