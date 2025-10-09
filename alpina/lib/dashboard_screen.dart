@@ -23,7 +23,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
   Future<void> _fetchSummary() async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
-    const url = 'hisabkhata.railway.internal/api/dashboard/summary';
+    const url = 'https://hisabkhata-production.up.railway.app/api/dashboard/summary';
 
     try {
       final response = await http.get(
