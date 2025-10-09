@@ -21,7 +21,7 @@ class _AddCustomerScreenState extends State<AddCustomerScreen> {
 
     setState(() => _isLoading = true);
 
-    const url = 'hisabkhata.railway.internal/api/customers';
+    const url = 'https://hisabkhata-production.up.railway.app/api/customers';
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
 
