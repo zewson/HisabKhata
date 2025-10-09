@@ -1,3 +1,4 @@
+  npm install jsonwebtoken
 {
   "name": "hishab-khata-server",
   "version": "1.0.0",
