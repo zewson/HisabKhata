@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isLoading = true);
 
-    const url = 'hisabkhata.railway.internal/api/auth/login';
+    const url = 'https://hisabkhata-production.up.railway.app/api/auth/login';
 
     try {
       final response = await http.post(
