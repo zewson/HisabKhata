@@ -29,7 +29,7 @@ class _CustomerListScreenState extends State<CustomerListScreen> {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
     // IMPORTANT: Replace with your live server URL
-    const url = 'hisabkhata.railway.internal/api/customers';
+    const url = 'https://hisabkhata-production.up.railway.app/api/customers';
 
     try {
       final response = await http.get(
