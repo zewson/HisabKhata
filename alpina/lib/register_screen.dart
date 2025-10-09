@@ -21,7 +21,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isLoading = true);
 
-    const url = 'https://hisabkhata-oduction.up.railway.app/api/auth/register';
+    const url = 'https://hisabkhata-production.up.railway.app/api/auth/register';
 
     try {
       final response = await http.post(
