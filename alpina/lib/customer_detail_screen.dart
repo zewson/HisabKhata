@@ -81,7 +81,7 @@ class _CustomerDetailScreenState extends State<CustomerDetailScreen> {
   Future<Map<String, String>?> _addTransaction(double amount, String type) async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
-    final url = 'https://alpina.titaniahub.net/api/customers/${_currentCustomer['_id']}/transactions';
+    final url = 'https://hisabkhata-production.up.railway.app/api/customers/${_currentCustomer['_id']}/transactions';
 
     final apiCall = http.post(
       Uri.parse(url),
@@ -96,7 +96,7 @@ class _CustomerDetailScreenState extends State<CustomerDetailScreen> {
   Future<Map<String, String>?> _editTransaction(String transactionId, double amount, String type) async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
-    final url = 'https://alpina.titaniahub.net/api/customers/${_currentCustomer['_id']}/transactions/$transactionId';
+    final url = 'https://hisabkhata-production.up.railway.app/api/customers/${_currentCustomer['_id']}/transactions/$transactionId';
 
     final apiCall = http.put(
       Uri.parse(url),
@@ -110,7 +110,7 @@ class _CustomerDetailScreenState extends State<CustomerDetailScreen> {
   Future<void> _deleteTransaction(String transactionId) async {
     final prefs = await SharedPreferences.getInstance();
     final token = prefs.getString('authToken');
-    final url = 'https://alpina.titaniahub.net/api/customers/${_currentCustomer['_id']}/transactions/$transactionId';
+    final url = 'https://hisabkhata-production.up.railway.app/api/customers/${_currentCustomer['_id']}/transactions/$transactionId';
 
     final apiCall = http.delete(Uri.parse(url), headers: {'x-auth-token': token ?? ''});
     await _makeApiRequest(apiCall, 'Transaction deleted successfully');
