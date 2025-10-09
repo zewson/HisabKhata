@@ -22,7 +22,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isLoading = true);
     
-    const url = 'hisabkhata.railway.internal/api/auth/customer/send-otp';
+    const url = 'https://hisabkhata-production.up.railway.appapi/auth/customer/send-otp';
 
     try {
       final response = await http.post(
@@ -58,7 +58,7 @@ class _CustomerLoginScreenState extends State<CustomerLoginScreen> {
     if (!_formKey.currentState!.validate()) return;
     setState(() => _isLoading = true);
 
-    const url = 'hisabkhata.railway.internal/auth/customer/verify-otp';
+    const url = 'https://hisabkhata-production.up.railway.app/auth/customer/verify-otp';
 
     try {
       final response = await http.post(
